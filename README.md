@@ -1,6 +1,6 @@
 ## Welcome to the MtbA Shop
 
-![MoveToBeActive Banner](https://fevieira27.github.io/mtba_shop/img/banner.png)
+![MoveToBeActive Banner](https://movetobeactive.github.io/img/banner.png)
 
 This is the shop page of MoveToBeActive watch faces for Garmin watches. Download them from our page on the ConnectIQ store:
 
