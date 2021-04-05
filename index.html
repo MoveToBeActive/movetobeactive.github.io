@@ -134,7 +134,7 @@
                 <h1>Pay in EUR = €1.40</h1>
                 <div id = "paypal-button-container-eur"></div>
                 <br>
-                <h1>Pay in USD = $1.70</h1>
+                <h1>Pay in USD = $1.60</h1>
                 <div id = "paypal-button-container-usd"></div>
                 <br>                
                 <h1>Pay in GBP = £1.25</h1>
@@ -186,7 +186,7 @@
 
         createOrder: function(data, actions) {
           return actions.order.create({
-            purchase_units: [{"description":"MtbA White Watch Face","amount":{"currency_code":"USD","value":1.7}}]
+            purchase_units: [{"description":"MtbA White Watch Face","amount":{"currency_code":"USD","value":1.6}}]
           });
         },
 
