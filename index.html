@@ -48,6 +48,9 @@
     <link rel="stylesheet" href="css/global.css" />
     <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3/"></script>
+    <!-- Load Paypal scripts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
   </head>
 
   <body>
@@ -137,7 +140,7 @@
                 <h1>Pay in GBP = £1.25</h1>
                 <div id = "paypal-button-container-gbp"></div>
               </div>
-              <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR" data-sdk-integration-source="button-factory"></script>
+              <script src="https://www.paypal.com/sdk/js?client-id=AUTWdcIMWSIK-vtv6pt5hfIJV_fOXnyqmDaB_zn-2yGyqjiusudMQv-7BZ3AUNPMcEveN3eEz8or34jv&currency=EUR" data-sdk-integration-source="button-factory"></script>
               <script>
                 //function initPayPalButton() {
                   paypal.Buttons({
@@ -169,7 +172,7 @@
                 //initPayPalButton();
               </script>
               
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory" data-namespace = "paypal_sdk"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AUTWdcIMWSIK-vtv6pt5hfIJV_fOXnyqmDaB_zn-2yGyqjiusudMQv-7BZ3AUNPMcEveN3eEz8or34jv&currency=USD" data-sdk-integration-source="button-factory" data-namespace = "paypal_sdk"></script>
   <script>
     //function initPayPalButton() {
       paypal_sdk.Buttons({
@@ -201,7 +204,7 @@
     //initPayPalButton();
   </script>
 
-<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=GBP" data-sdk-integration-source="button-factory" data-namespace = "paypal_gbp"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AUTWdcIMWSIK-vtv6pt5hfIJV_fOXnyqmDaB_zn-2yGyqjiusudMQv-7BZ3AUNPMcEveN3eEz8or34jv&currency=GBP" data-sdk-integration-source="button-factory" data-namespace = "paypal_gbp"></script>
   <script>
     //function initPayPalButton() {
       paypal_gbp.Buttons({
