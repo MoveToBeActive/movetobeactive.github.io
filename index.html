@@ -127,9 +127,9 @@
               <!-- End Stripe Buttons -->
               
               <!-- Paypal buttons -->
-              <div id="smart-button-container">
+              <div id="smart-button-container-eur">
                 <div style="text-align: center;">
-                  <div id="paypal-button-container"><br><h1>Pay in EUR = €1.40</h1></div>
+                  <div id="paypal-button-container-eur"><br><h1>Pay in EUR = €1.40</h1></div>
                 </div>
               </div>
               <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR" data-sdk-integration-source="button-factory"></script>
@@ -146,7 +146,7 @@
 
                     createOrder: function(data, actions) {
                       return actions.order.create({
-                        purchase_units: [{"description":"MoveToBeActive White Version","amount":{"currency_code":"EUR","value":1.4}}]
+                        purchase_units: [{"description":"MtbA White Version EUR","amount":{"currency_code":"EUR","value":1.4}}]
                       });
                     },
 
@@ -159,15 +159,15 @@
                     onError: function(err) {
                       console.log(err);
                     }
-                  }).render('#paypal-button-container');
+                  }).render('#paypal-button-container-eur');
                 }
                 initPayPalButton();
               </script>
               
               
-              <div id="smart-button-container">
+              <div id="smart-button-container-usd">
       <div style="text-align: center;">
-        <div id="paypal-button-container"><br><h1>Pay in USD = $1.70</h1></div>
+        <div id="paypal-button-container-usd"><br><h1>Pay in USD = $1.70</h1></div>
       </div>
     </div>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
@@ -197,7 +197,7 @@
         onError: function(err) {
           console.log(err);
         }
-      }).render('#paypal-button-container');
+      }).render('#paypal-button-container-usd');
     }
     initPayPalButton();
   </script>
