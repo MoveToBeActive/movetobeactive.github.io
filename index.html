@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MtbA Shop</title>
+    <meta
+      name="description"
+      content="MoveToBeActive Shop of Garmin watch faces"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K2BSG167WP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-K2BSG167WP");
+    </script>
+    
+    <script data-ad-client="ca-pub-6627201559272369" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Karma"
+    />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Karma", sans-serif;
+      }
+      .w3-bar-block .w3-bar-item {
+        padding: 20px;
+      }
+      body {
+        background-image: url("img/bg.png");
+      }
+    </style>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+
+  <body>
+    <!-- Top menu -->
+    <div class="w3-top">
+      <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+        <div class="w3-center w3-padding-16">
+          <h2>
+            <img
+              src="img/Logo-MoveToBeActive_small.png"
+              alt="MtbA Logo Small"
+            />
+            MoveToBeActive Watch Faces for Garmin
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- First Photo Grid
+    <div class="w3-row-padding w3-padding-16 w3-center" style="max-width:1100px;margin:auto">
+      <img src="img/banner.jpg" />
+    </div> -->
+
+    <!-- Image header -->
+    <header class="w3-display-container w3-center" id="home">
+      <br />
+      <br />
+      <br />
+      <img
+        class="w3-image"
+        src="img/banner.png"
+        alt="Original MoveToBeActive watch face on Garmin Venu"
+      />
+    </header>
+    <br />
+    <div class="w3-row-padding" style="margin-left:150px; margin-right:150px; text-align: justify;  text-justify: inter-word;">
+      <h5>
+        All our watch faces are free to use without any time restrictions, as long as you stick to the
+        default color and data points. In case you are pleased with the watch
+        face and would like to have more customization options, an unlock code can be purchased below.
+        <br /><br />
+        Please choose the watch face that you would like to buy the code (delivered by email
+        within 2 business days of the payment confirmation):
+      </h5>
+    </div>
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      <div class="w3-quarter">
+        <!-- <div class="sr-root"> -->
+        <div class="sr-main" style="display: flex;">
+          <div class="sr-container">
+            <section class="container">
+              <img
+                src="img/Home2.png"
+                alt="MtbA White"
+                width="270"
+                height="270"
+              />
+              <h1>MtbA White Version</h1>
+              <button
+                data-checkout-mode="payment"
+                data-price-id="price_1IcAtsFtAbcT3JTHbbV7ywG3"
+              >
+                Pay EUR €1.30
+              </button>
+              <button
+                data-checkout-mode="payment"
+                data-price-id="price_1IcAtsFtAbcT3JTHvglb6CBh"
+              >
+                Pay USD $1.50
+              </button>
+              <button
+                data-checkout-mode="payment"
+                data-price-id="price_1IcAtsFtAbcT3JTH0rsvTcGT"
+              >
+                Pay GBP £1.20
+              </button>
+            </section>
+          </div>
+          <div id="error-message"></div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <br />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6627201559272369"
+     data-ad-slot="8590723077"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>    
+    <br />
+    <br />
+    <footer>
+      <div class="w3-bottom">
+        <div class="banner">
+          <span>
+            This is the shop page of MoveToBeActive watch faces for Garmin
+            watches.
+            <br />Download them from our page on the
+            <a
+              href="https://apps.garmin.com/en-US/developer/f959cfb4-acb7-4db5-8dfd-92749316d762/apps"
+            >
+              ConnectIQ store
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
+      var PUBLISHABLE_KEY =
+        "pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S";
+      // Replace with the domain you want your users to be redirected back to after payment
+      var DOMAIN = location.href.replace(/[^/]*$/, "");
+
+      if (PUBLISHABLE_KEY === "pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP") {
+        console.log(
+          "Replace the hardcoded publishable key with your own publishable key: https://dashboard.stripe.com/test/apikeys"
+        );
+      }
+
+      var stripe = Stripe(PUBLISHABLE_KEY);
+
+      // Handle any errors from Checkout
+      var handleResult = function(result) {
+        if (result.error) {
+          var displayError = document.getElementById("error-message");
+          displayError.textContent = result.error.message;
+        }
+      };
+
+      document.querySelectorAll("button").forEach(function(button) {
+        button.addEventListener("click", function(e) {
+          var mode = e.target.dataset.checkoutMode;
+          var priceId = e.target.dataset.priceId;
+          var items = [{ price: priceId, quantity: 1 }];
+
+          // Make the call to Stripe.js to redirect to the checkout page
+          // with the sku or plan ID.
+          stripe
+            .redirectToCheckout({
+              mode: mode,
+              lineItems: items,
+              successUrl:
+                DOMAIN + "success.html?session_id={CHECKOUT_SESSION_ID}",
+              cancelUrl:
+                DOMAIN + "canceled.html?session_id={CHECKOUT_SESSION_ID}"
+            })
+            .then(handleResult);
+        });
+      });
+    </script>
+  </body>
+</html>
