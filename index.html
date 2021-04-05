@@ -137,7 +137,7 @@
                 <h1>Pay in USD = $1.60</h1>
                 <div id = "paypal-button-container-usd"></div>
                 <br>                
-                <h1>Pay in GBP = £1.25</h1>
+                <h1>Pay in GBP = £1.20</h1>
                 <div id = "paypal-button-container-gbp"></div>
               </div>
               <script src="https://www.paypal.com/sdk/js?client-id=AUTWdcIMWSIK-vtv6pt5hfIJV_fOXnyqmDaB_zn-2yGyqjiusudMQv-7BZ3AUNPMcEveN3eEz8or34jv&currency=EUR" data-sdk-integration-source="button-factory"></script>
@@ -210,7 +210,7 @@
       paypal_gbp.Buttons({
         style: {
           shape: 'pill',
-          color: 'gold',
+          color: 'blue',
           layout: 'horizontal',
           label: 'pay',
           tagline: false
@@ -218,7 +218,7 @@
 
         createOrder: function(data, actions) {
           return actions.order.create({
-            purchase_units: [{"description":"MtbA White Watch Face","amount":{"currency_code":"GBP","value":1.25}}]
+            purchase_units: [{"description":"MtbA White Watch Face","amount":{"currency_code":"GBP","value":1.2}}]
           });
         },
 
