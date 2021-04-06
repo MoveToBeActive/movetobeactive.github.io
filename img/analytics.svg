@@ -1,0 +1,11 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100" height="100">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+        <ul>
+            <li>text</li>
+        </ul>
+        <!-- Other embed HTML element/text into SVG -->
+        <iframe width="600" height="500" src="https://datastudio.google.com/embed/reporting/f90fa6c6-3cc5-4b6a-abdc-89c53342108a/page/nJVBC" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</foreignObject>
+</svg>
