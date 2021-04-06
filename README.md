@@ -11,5 +11,3 @@ All our watch faces are free to use without time restrictions with the default c
 Please choose a watch face below to buy the code (delivered by email within 2 business days of the payment confirmation):
 
 https://movetobeactive.github.io/
-
-![](./img/analytics.svg)
