@@ -18,10 +18,9 @@
 
   gtag('config', 'G-YHK0E9JXFB');
 
-      gtag("success", "conversion", {
-        send_to: "AW-event/purchase",
-        model: "White"
-      });
+gtag('event', 'purchase', {
+  transaction_id: location.pathname
+})
     </script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
