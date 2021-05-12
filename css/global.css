@@ -35,9 +35,10 @@ h6 {
   margin-bottom: 4px;
 }
 h1 {
-  font-size: 27px;
+  font-size: 28px;
   text-align: center;
   color: var(--headline-color);
+  text-shadow: 1px 1px 8px #888888;
 }
 h2 {
   margin-left: 5px;
