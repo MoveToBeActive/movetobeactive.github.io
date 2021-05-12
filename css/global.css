@@ -335,7 +335,7 @@ pre {
 
 /* Rounded corners images */
 img.rounded-corners {
-  border-radius: 30px;
+  border-radius: 6px;
 }
 
 /* Responsiveness */
