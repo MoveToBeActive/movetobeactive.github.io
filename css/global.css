@@ -333,6 +333,11 @@ pre {
   padding-top: 12px;
 }
 
+/* Rounded corners images */
+img.rounded-corners {
+  border-radius: 30px;
+}
+
 /* Responsiveness */
 @media (max-width: 720px) {
   .sr-root {
