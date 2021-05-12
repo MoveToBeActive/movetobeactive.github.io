@@ -346,8 +346,8 @@ img.rounded-corners {
   background: gold;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 20px;
+  width: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 
@@ -355,8 +355,8 @@ img.rounded-corners {
   background: gold;
   clip-path: polygon(50% 0%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 20px;
+  width: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 
@@ -364,8 +364,8 @@ img.rounded-corners {
   background: gray;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   display: inline-block;
-  height: 10px;
-  width: 10px;
+  height: 20px;
+  width: 20px;
   text-shadow: 2px 2px 4px #000000;
 }
 
