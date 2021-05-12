@@ -348,7 +348,10 @@ img.rounded-corners {
   display: inline-block;
   height: 20px;
   width: 20px;
-  text-shadow: 2px 2px 4px #000000;
+}
+
+.star-wrap {
+  filter: drop-shadow(2px 2px 4px #000000);
 }
 
 .clip-halfstar {
@@ -357,7 +360,6 @@ img.rounded-corners {
   display: inline-block;
   height: 20px;
   width: 20px;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 .clip-emptystar {
