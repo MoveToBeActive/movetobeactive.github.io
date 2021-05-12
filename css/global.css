@@ -41,6 +41,7 @@ h1 {
 }
 h2 {
   margin-left: 5px;
+  text-shadow: 1px 1px 4px #888888;
 }
 h4 {
   font-weight: 500;
@@ -351,7 +352,7 @@ img.rounded-corners {
 }
 
 .star-wrap {
-  filter: drop-shadow(2px 2px 8px #888888);
+  filter: drop-shadow(1px 1px 4px #888888);
 }
 
 .clip-halfstar {
