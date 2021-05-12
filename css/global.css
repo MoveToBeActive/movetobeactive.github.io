@@ -341,6 +341,18 @@ img.rounded-corners {
   text-align: center;
 }
 
+.bordershadow {
+    text-align: center;
+    border: 2px solid #dd;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 20%);
+    transition: all 200ms ease-out;
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+
 /* Responsiveness */
 @media (max-width: 720px) {
   .sr-root {
