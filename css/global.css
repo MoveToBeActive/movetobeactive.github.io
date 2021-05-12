@@ -343,6 +343,12 @@ img.rounded-corners {
   text-align: center;
 }
 
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
 /* Review Stars */
 .clip-star {
   background: gold;
