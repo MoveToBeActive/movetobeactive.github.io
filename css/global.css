@@ -532,18 +532,16 @@ img.rounded-corners {
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 300px;
   min-width: 250px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .container .pasha-image-stack {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .container:first-of-type {
-  margin-right: 20px;
+  margin-right: auto;
 }
 
 .quantity-setter {
