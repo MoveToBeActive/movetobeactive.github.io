@@ -351,7 +351,7 @@ img.rounded-corners {
 }
 
 .star-wrap {
-  filter: drop-shadow(2px 2px 4px #888888);
+  filter: drop-shadow(2px 2px 8px #888888);
 }
 
 .clip-halfstar {
