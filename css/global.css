@@ -337,7 +337,7 @@ pre {
 img.rounded-corners {
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 7px 14px 0 rgba(50, 50, 93, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 5px 5px 18px #888888;
   text-align: center;
 }
 
