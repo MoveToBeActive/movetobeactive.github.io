@@ -371,6 +371,15 @@ img.rounded-corners {
   text-shadow: 2px 2px 4px #000000;
 }
 
+.mobileHide { display: inline; }
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px){
+   .mobileHide { display: none;}
+}
+
 /* Responsiveness */
 @media (max-width: 720px) {
   .sr-root {
