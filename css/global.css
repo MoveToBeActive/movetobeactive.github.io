@@ -380,6 +380,10 @@ img.displayed {
 
 .mobileHide { display: inline; }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Smartphone Portrait and Landscape */
 /* Responsiveness @media (max-width: 720px) { */
