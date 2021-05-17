@@ -380,17 +380,13 @@ img.displayed {
 
 .mobileHide { display: inline; }
 
-/* Smartphone Portrait and Landscape */
-@media only screen
-  and (min-device-width : 320px)
-  and (max-device-width : 480px){
-   .mobileHide { display: none;}
-}
 
+/* Smartphone Portrait and Landscape */
 /* Responsiveness @media (max-width: 720px) { */
 
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
+  
   .sr-root {
     flex-direction: column;
     justify-content: flex-start;
@@ -398,6 +394,8 @@ img.displayed {
     min-width: 320px;
   }
 
+  .mobileHide { display: none;}
+	
   .sr-header__logo {
     background-position: center;
   }
@@ -422,10 +420,9 @@ img.displayed {
   /* tr { border: 1px solid #ccc; } */
 	
 	td { 
-		/* Behave  like a "row" - border-bottom: 1px solid #eee;  */
+		/* Behave  like a "row" - border-bottom: 1px solid #eee; padding-left: 50%; */
 		border: none;
 		position: relative;
-		padding-left: 50%; 
 	}
   
 }
