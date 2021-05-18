@@ -32,13 +32,14 @@
           }
 
           function startTimer() {
-              setInterval(displayNextImage, 3000);
+              setInterval(displayNextImage, 5000);
           }
 
           var images = [], x = -1;
           images[0] = "img/banner3.png";
           images[1] = "img/banner2.png";
           images[2] = "img/banner4.png";
+          images[3] = "img/banner.png";
       </script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -101,9 +102,10 @@
       <br />
       <br />
       <img class="w3-image" id="img" src="img/banner.png"/>
+      <!--
       <button type="button" onclick="displayPreviousImage()">Previous</button>
       <button type="button" onclick="displayNextImage()">Next</button>
-      <!-- <img
+      <img
         class="w3-image"
         src="img/banner.png"
         alt="Original MoveToBeActive watch face on Garmin Venu"
