@@ -232,6 +232,29 @@ f
   </script>
 </div>
                 <em>Powered by <a href="https://commerce.coinbase.com/">Coinbase</a></em>
+                <br><br>
+                <script
+    src="https://js.crypto.com/sdk?publishable-key=pk_test_bwAWzvtx4gQtfmzeordWQfsA">
+  </script>
+
+  <script>
+    cryptopay.Button({
+      createPayment: function(actions) {
+        return actions.payment.create({
+          currency: 'USD',
+          amount: 1.5,
+          description : 'MtbA White Analog',
+        });
+      },
+      onApprove: function (data, actions) {
+        // Optional: add logic such as browser redirection or check data object content
+        window.location.href = "https://mtba.int.eu.org/success.html";
+      },
+      defaultLang: 'en-US' // Optional: default language for payment page
+    }).render("#pay-button")
+  </script>
+
+  <div id="pay-button"></div>
                 </center>
               <!-- Paypal buttons 
               <div class="container">
