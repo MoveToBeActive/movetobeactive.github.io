@@ -152,11 +152,11 @@
                                            <!-- <h4 id=stripe>Stripe
                                                 <br>                                  
                                             </h4> -->
-                                            <a href="https://stripe.com/about">
+                                           <h4 id=stripe> <a href="https://stripe.com/about">
                                                 <img
                                                   src="assets/images/Powered%20by%20Stripe%20-%20blurple.png"
                                                   alt="Stripe Badge"
-                                                  style="width: 160px;"
+                                                  style="width: 180px;"
                                                 />
                                             </a>                                                 
                                             <pre>                                         
@@ -202,7 +202,7 @@
                                                   >
                                                     <center>Pay JPY ¥180.00</center>
                                                   </button>             
-                                            <!-- End Stripe Buttons --></pre>
+                                            <!-- End Stripe Buttons --></pre></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -252,6 +252,53 @@
             </div>
         </div>
     </footer>
+ <script>
+      // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
+      var PUBLISHABLE_KEY =
+        "pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S";
+      // Replace with the domain you want your users to be redirected back to after payment
+      var DOMAIN = location.href.replace(/[^/]*$/, "");
+
+      if (PUBLISHABLE_KEY === "pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP") {
+        console.log(
+          "Replace the hardcoded publishable key with your own publishable key: https://dashboard.stripe.com/test/apikeys"
+        );
+      }
+
+      var stripe = Stripe(PUBLISHABLE_KEY);
+
+      // Handle any errors from Checkout
+      var handleResult = function(result) {
+        if (result.error) {
+          var displayError = document.getElementById("error-message");
+          displayError.textContent = result.error.message;
+        }
+      };
+
+      document.querySelectorAll("button").forEach(function(button) {
+        button.addEventListener("click", function(e) {
+          var mode = e.target.dataset.checkoutMode;
+          var priceId = e.target.dataset.priceId;
+          var items = [{ price: priceId, quantity: 1 }];
+
+          // Make the call to Stripe.js to redirect to the checkout page
+          // with the sku or plan ID.
+          stripe
+            .redirectToCheckout({
+              mode: mode,
+              lineItems: items,
+              successUrl:
+                DOMAIN + "success.html?session_id={CHECKOUT_SESSION_ID}",
+              cancelUrl:
+                DOMAIN + "canceled.html?session_id={CHECKOUT_SESSION_ID}"
+            })
+            .then(handleResult);
+        });
+      });
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/19655302.js"></script>
+    <!-- End of HubSpot Embed Code -->    
     <script type=text/plain data-cookiecategory=analytics async src="https://www.googletagmanager.com/gtag/js?id=G-YHK0E9JXFB"></script>
     <script type=text/plain data-cookiecategory=analytics>
         window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YHK0E9JXFB');
