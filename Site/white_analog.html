@@ -245,13 +245,13 @@
                                             <h4 id=paypal>Paypal</h4>
                                                 <!-- Paypal buttons -->
               <div class="container">
-                <h1>Pay in EUR = €1.40</h1>
+                Pay in EUR = €1.35
                 <div id = "paypal-button-container-eur"></div>
-                <br>
-                <h1>Pay in USD = $1.60</h1>
+                <br><br>
+                Pay in USD = $1.60
                 <div id = "paypal-button-container-usd"></div>
-                <br>                
-                <h1>Pay in GBP = £1.20</h1>
+                <br><br>  
+                Pay in GBP = £1.20
                 <div id = "paypal-button-container-gbp"></div>
               </div>
               <script src="https://www.paypal.com/sdk/js?client-id=AVdn6pY7lctLqgFudPQFFiujvnZvd00_d03ltdfGLHgBSJRlgHvvp7SVtLTnuuLTiebj8TzpW6hNDcy9&currency=EUR" data-sdk-integration-source="button-factory"></script>
@@ -259,15 +259,15 @@
                 //function initPayPalButton() {
                   paypal.Buttons({
                     style: {
-                      shape: 'pill',
-                      color: 'black',
+                      shape: 'rect',
+                      color: 'silver',
                       layout: 'horizontal',
-                      label: 'pay',
+                      label: 'paypal',
                       tagline: false
                     },
                     createOrder: function(data, actions) {
                       return actions.order.create({
-                        purchase_units: [{"description":"MtbA White Watch Face","amount":{"currency_code":"EUR","value":1.4}}]
+                        purchase_units: [{"description":"MtbA White Watch Face","amount":{"currency_code":"EUR","value":1.35}}]
                       });
                     },
                     onApprove: function(data, actions) {
@@ -288,10 +288,10 @@
     //function initPayPalButton() {
       paypal_sdk.Buttons({
         style: {
-          shape: 'pill',
-          color: 'white',
+          shape: 'rect',
+          color: 'blue',
           layout: 'horizontal',
-          label: 'pay',
+          label: 'paypal',
           tagline: false
         },
         createOrder: function(data, actions) {
@@ -316,10 +316,10 @@
     //function initPayPalButton() {
       paypal_gbp.Buttons({
         style: {
-          shape: 'pill',
-          color: 'blue',
+          shape: 'rect',
+          color: 'white',
           layout: 'horizontal',
-          label: 'pay',
+          label: 'paypal',
           tagline: false
         },
         createOrder: function(data, actions) {
