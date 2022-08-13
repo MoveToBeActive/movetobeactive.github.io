@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mtba.int.eu.org
+Token: 666bc1e86a83ae34400ca28ef36dabf0558f919dedc16f710c386cb6c4d4fab3
