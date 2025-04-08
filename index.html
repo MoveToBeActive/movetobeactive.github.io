@@ -78,7 +78,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/global.css" />
     <!-- Load Stripe.js on your website. -->
-    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://js.stripe.com/v3"></script>
     <!-- Load Paypal scripts here -->
     
     <!-- Codes for better mobile experience -->
@@ -128,7 +128,7 @@ f
         default color and data points. In case you are pleased with the watch
         face and would like to have more customization options, an unlock code can be purchased below that will allow you to:
         <br><br>
-        - Choose between 14 different data points to add into each of the 5 different locations on the watch faces:
+        - Choose between 26 different data points to add into each of the 5 different locations on the watch faces:
         <ol>    
             <li><b>Notifications</b> count: Accent color if at least one notification is available or grey if no unread notifications;</li>
             <li><b>Heart Rate</b> data;</li>
@@ -144,12 +144,18 @@ f
             <li><b>Solar intensity</b> percentage: Describes the solar sensor’s charge efficiency, only available on Solar Charged watches.</li>
             <li><b>Seconds</b></li>
             <li><b>Intensity Minutes</b> per week</li>
+            <li><b>Next Sun Event</b></li>
+            <li><b>Body Battery</b></li>
+            <li><b>Stress Level</b></li>
+            <li><b>VO2Max</b></li>
+            <li><b>Battery Consumption (%/day)</b></li>
+            <li><b>Weather Condition Forecast (next 2h or 3h)</b></li>
         </ol>
         - 10 different accent colors that go well with the white background (<b>MtbA White Analog only</b>);<br>
-        - 22 stripe patterns inspired by the most iconic sport stripes (<b>MtbA Classic Stripes only</b>).
+         <!-- - 22 stripe patterns inspired by the most iconic sport stripes (<b>MtbA Classic Stripes only</b>).-->
 <br><br>
-        Please choose the watch face that you would like to buy the code using your preferred currency (<b>delivered automatically by email
-        between 1 to 2 hours after payment confirmation</b>, but in cases when the automated process fails, it could take up to 1 business day):
+        Please choose your preferred currency that you would like to use to buy the unlock code. It is going to be <b>delivered automatically by email
+        between 1 to 2 hours after payment confirmation</b>, but in cases when the automated process fails, it could take up to 1 business day:
       </h5>
    <!-- </div>
          <div class="sr-root"> -->
@@ -221,6 +227,17 @@ f
                   class="displayed"
                 />
               </a>
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer"
+  id="checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46"
+  role="link"
+  type="button"
+>
+  Checkout
+</button>
+
+<div id="error-message">Payment failed, please refresh page and try again.</div>              
               <!-- End Stripe Buttons -->
               <br>
               <center>
@@ -435,7 +452,7 @@ f
                   width="120"
                   class="displayed"
                 />
-              </a>
+              </a>      
               <!-- End Stripe Buttons -->
               <br>
               <center>
@@ -488,6 +505,44 @@ f
       </div>
     </footer>
 
+<script>
+(function() {
+  var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1RBjp7FtAbcT3JTHYfr6gf46', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://docs.stripe.com/payments/checkout/fulfill-orders
+       */
+      successUrl: 'https://mtba.int.eu.org/success',
+      cancelUrl: 'https://mtba.int.eu.org/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+      
+        <!--
     <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY =
@@ -532,6 +587,7 @@ f
         });
       });
     </script>
+      -->
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/19655302.js"></script>
     <!-- End of HubSpot Embed Code -->
