@@ -590,16 +590,46 @@ f
      * When the customer clicks on the button, redirect
      * them to Checkout.
      */
+  //loop
+      // Handle any errors from Checkout
+      var handleResult = function(result) {
+        if (result.error) {
+          var displayError = document.getElementById("error-message");
+          displayError.textContent = result.error.message;
+        }
+      };
+
+      document.querySelectorAll("button").forEach(function(button) {
+        button.addEventListener("click", function(e) {
+          var mode = e.target.dataset.checkoutMode;
+          var priceId = e.target.dataset.priceId;
+          var items = [{ price: priceId, quantity: 1 }];
+
+          // Make the call to Stripe.js to redirect to the checkout page
+          // with the sku or plan ID.
+          stripe
+            .redirectToCheckout({
+              mode: mode,
+              lineItems: items,
+              successUrl:
+                DOMAIN + "success.html?session_id={CHECKOUT_SESSION_ID}",
+              cancelUrl:
+                DOMAIN + "canceled.html?session_id={CHECKOUT_SESSION_ID}"
+            })
+            .then(handleResult);
+        });
+      });    
+    /*
+     * Do not rely on the redirect to the successUrl for fulfilling
+     * purchases, customers may not always reach the success_url after
+     * a successful payment.
+     * Instead use one of the strategies described in
+     * https://docs.stripe.com/payments/checkout/fulfill-orders
+     */    
+/*
     stripe.redirectToCheckout({
       lineItems: [{price: 'price_1RBjp7FtAbcT3JTHYfr6gf46', quantity: 1}],
       mode: 'payment',
-      /*
-       * Do not rely on the redirect to the successUrl for fulfilling
-       * purchases, customers may not always reach the success_url after
-       * a successful payment.
-       * Instead use one of the strategies described in
-       * https://docs.stripe.com/payments/checkout/fulfill-orders
-       */
       successUrl: 'https://mtba.int.eu.org/success',
       cancelUrl: 'https://mtba.int.eu.org/canceled',
     })
@@ -608,12 +638,13 @@ f
         /*
          * If `redirectToCheckout` fails due to a browser or network
          * error, display the localized error message to your customer.
-         */
+         *
         var displayError = document.getElementById('error-message');
         displayError.textContent = result.error.message;
       }
     });
   });
+  */
 })();
 </script>
       
