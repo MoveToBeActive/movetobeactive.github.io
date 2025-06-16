@@ -581,6 +581,9 @@ f
     </footer>
 
 <script>
+    // Replace with the domain you want your users to be redirected back to after payment
+    var DOMAIN = location.href.replace(/[^/]*$/, "");     
+
 (function() {
   var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
 
@@ -647,14 +650,11 @@ f
   */
 })();
 </script>
-      
         <!--
     <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY =
         "pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S";
-      // Replace with the domain you want your users to be redirected back to after payment
-      var DOMAIN = location.href.replace(/[^/]*$/, "");
 
       if (PUBLISHABLE_KEY === "pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP") {
         console.log(
