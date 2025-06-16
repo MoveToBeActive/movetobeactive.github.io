@@ -198,6 +198,7 @@ f
 >
   Pay in EUR = €3.50
 </button>
+<!--
 <button
   style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
   id="checkout-button-price_1RaXEYFtAbcT3JTHdkOmuf4i"
@@ -270,7 +271,7 @@ f
 >
   Pay in JPY = ¥600.
 </button>
-
+-->
               
 <div id="error-message"></div>              
               <br>
@@ -582,18 +583,19 @@ f
 
 <script>
 
-//(function() {
+(function() {
   // Replace with the domain you want your users to be redirected back to after payment
   var DOMAIN = location.href.replace(/[^/]*$/, "");     
   var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
 
-  //var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
-  //checkoutButton.addEventListener('click', function () {
+  var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
+  checkoutButton.addEventListener('click', function () {
     /*
      * When the customer clicks on the button, redirect
      * them to Checkout.
-     */
+  
   //loop
+  
       // Handle any errors from Checkout
       var handleResult = function(result) {
         if (result.error) {
@@ -622,6 +624,7 @@ f
             .then(handleResult);
         });
       });    
+         */
     /*
      * Do not rely on the redirect to the successUrl for fulfilling
      * purchases, customers may not always reach the success_url after
@@ -629,7 +632,7 @@ f
      * Instead use one of the strategies described in
      * https://docs.stripe.com/payments/checkout/fulfill-orders
      */    
-/*
+
     stripe.redirectToCheckout({
       lineItems: [{price: 'price_1RBjp7FtAbcT3JTHYfr6gf46', quantity: 1}],
       mode: 'payment',
@@ -642,13 +645,14 @@ f
          * If `redirectToCheckout` fails due to a browser or network
          * error, display the localized error message to your customer.
          *
+      */
         var displayError = document.getElementById('error-message');
         displayError.textContent = result.error.message;
       }
     });
   });
-  */
-//})();
+  
+})();
 </script>
         <!--
     <script>
