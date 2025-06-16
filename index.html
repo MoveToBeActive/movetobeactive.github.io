@@ -196,83 +196,9 @@ f
   role="link"
   type="button"
 >
-  Pay in EUR = €3.50
+  Click here to buy
 </button>
-<!--
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXEYFtAbcT3JTHdkOmuf4i"
-  role="link"
-  type="button"
->
-  Pay in PLN = zł15.00
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXFHFtAbcT3JTHvcPgNM1t"
-  role="link"
-  type="button"
->
-  Pay in CH Fr. = CHF 3.35
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaX9zFtAbcT3JTHYehUbB54"
-  role="link"
-  type="button"
->
-  Pay in GBP = £3.00
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXCQFtAbcT3JTHEqLwpprx"
-  role="link"
-  type="button"
->
-  Pay in USD = $4.25
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXDEFtAbcT3JTHFjdZRnMl"
-  role="link"
-  type="button"
->
-  Pay in CAD = $5.60
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXDnFtAbcT3JTHpbDAqZvV"
-  role="link"
-  type="button"
->
-  Pay in AUD = $6.30
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXQAFtAbcT3JTHVAJBvVeD"
-  role="link"
-  type="button"
->
-  Pay in BRL = R$23.00
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXN0FtAbcT3JTHErzZq6xy"
-  role="link"
-  type="button"
->
-  Pay in INR = ₹555.00
-</button>
-<button
-  style="background-color:#E46176;color:#FFF;padding:8px 12px;border:0;border-radius:6px;font-size:1.1em;cursor:pointer"
-  id="checkout-button-price_1RaXKTFtAbcT3JTHQkUaVZiG"
-  role="link"
-  type="button"
->
-  Pay in JPY = ¥600.
-</button>
--->
-              
+
 <div id="error-message"></div>              
               <br>
               <a href="https://stripe.com/about">
@@ -582,10 +508,7 @@ f
     </footer>
 
 <script>
-
 (function() {
-  // Replace with the domain you want your users to be redirected back to after payment
-  var DOMAIN = location.href.replace(/[^/]*$/, "");     
   var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
 
   var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
@@ -593,49 +516,17 @@ f
     /*
      * When the customer clicks on the button, redirect
      * them to Checkout.
-  
-  //loop
-  
-      // Handle any errors from Checkout
-      var handleResult = function(result) {
-        if (result.error) {
-          var displayError = document.getElementById("error-message");
-          displayError.textContent = result.error.message;
-        }
-      };
-
-      document.querySelectorAll("button").forEach(function(button) {
-        button.addEventListener("click", function(e) {
-          var mode = e.target.dataset.checkoutMode;
-          var priceId = e.target.dataset.priceId;
-          var items = [{ price: priceId, quantity: 1 }];
-
-          // Make the call to Stripe.js to redirect to the checkout page
-          // with the sku or plan ID.
-          stripe
-            .redirectToCheckout({
-              mode: mode,
-              lineItems: items,
-              successUrl:
-                DOMAIN + "success.html?session_id={CHECKOUT_SESSION_ID}",
-              cancelUrl:
-                DOMAIN + "canceled.html?session_id={CHECKOUT_SESSION_ID}"
-            })
-            .then(handleResult);
-        });
-      });    
-         */
-    /*
-     * Do not rely on the redirect to the successUrl for fulfilling
-     * purchases, customers may not always reach the success_url after
-     * a successful payment.
-     * Instead use one of the strategies described in
-     * https://docs.stripe.com/payments/checkout/fulfill-orders
-     */    
-
+     */
     stripe.redirectToCheckout({
       lineItems: [{price: 'price_1RBjp7FtAbcT3JTHYfr6gf46', quantity: 1}],
       mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://docs.stripe.com/payments/checkout/fulfill-orders
+       */
       successUrl: 'https://mtba.int.eu.org/success',
       cancelUrl: 'https://mtba.int.eu.org/canceled',
     })
@@ -644,21 +535,22 @@ f
         /*
          * If `redirectToCheckout` fails due to a browser or network
          * error, display the localized error message to your customer.
-         *
-      */
+         */
         var displayError = document.getElementById('error-message');
         displayError.textContent = result.error.message;
       }
     });
   });
-  
 })();
 </script>
+      
         <!--
     <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY =
         "pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S";
+      // Replace with the domain you want your users to be redirected back to after payment
+      var DOMAIN = location.href.replace(/[^/]*$/, "");
 
       if (PUBLISHABLE_KEY === "pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP") {
         console.log(
