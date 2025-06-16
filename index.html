@@ -581,14 +581,14 @@ f
     </footer>
 
 <script>
-    // Replace with the domain you want your users to be redirected back to after payment
-    var DOMAIN = location.href.replace(/[^/]*$/, "");     
 
-(function() {
+//(function() {
+  // Replace with the domain you want your users to be redirected back to after payment
+  var DOMAIN = location.href.replace(/[^/]*$/, "");     
   var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
 
-  var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
-  checkoutButton.addEventListener('click', function () {
+  //var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
+  //checkoutButton.addEventListener('click', function () {
     /*
      * When the customer clicks on the button, redirect
      * them to Checkout.
@@ -648,7 +648,7 @@ f
     });
   });
   */
-})();
+//})();
 </script>
         <!--
     <script>
