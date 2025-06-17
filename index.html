@@ -366,6 +366,7 @@ f
         default color and data points. In case you are pleased with the watch
         face and would like to have more customization options, an unlock code can be purchased below that will allow you to:
         <br><br>
+        - 10 different accent colors that go well with the white background.<br>
         - Choose between 26 different data points to add into each of the 5 different locations on the watch faces:
         <ol>    
             <li><b>Notifications</b> count: Accent color if at least one notification is available or grey if no unread notifications;</li>
@@ -389,7 +390,6 @@ f
             <li><b>Battery Consumption (%/day)</b></li>
             <li><b>Weather Condition Forecast (next 2h or 3h)</b></li>
         </ol>
-        - 10 different accent colors that go well with the white background (<b>MtbA White Analog only</b>);<br>
          <!-- - 22 stripe patterns inspired by the most iconic sport stripes (<b>MtbA Classic Stripes only</b>).-->
       </h5>
         <br><br>
@@ -413,7 +413,7 @@ f
       <div class="w3-bottom">
         <div class="banner">
           <span>
-            This is the shop page of MoveToBeActive watch faces for Garmin.
+            This is the shop of MoveToBeActive watch faces for Garmin.
             <br />Download them from our page on the
             <a
               href="https://apps.garmin.com/en-US/developer/f959cfb4-acb7-4db5-8dfd-92749316d762/apps"
@@ -429,11 +429,11 @@ f
 
 (function() {
   // Replace with the domain you want your users to be redirected back to after payment
-  var DOMAIN = location.href.replace(/[^/]*$/, "");     
+  //var DOMAIN = location.href.replace(/[^/]*$/, "");     
   var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
 
-  var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
-  checkoutButton.addEventListener('click', function () {
+  //var checkoutButton = document.getElementById('checkout-button-price_1RBjp7FtAbcT3JTHYfr6gf46');
+  //checkoutButton.addEventListener('click', function () {
     /*
      * When the customer clicks on the button, redirect
      * them to Checkout.
@@ -477,6 +477,41 @@ f
      * https://docs.stripe.com/payments/checkout/fulfill-orders
      */    
 
+      document.querySelectorAll("button").forEach(function(button) {
+        button.addEventListener("click", function(e) {
+          //var mode = e.target.dataset.checkoutMode;
+          var priceId = e.target.dataset.priceId;
+          var items = [{ price: priceId, quantity: 1 }];
+
+          // Make the call to Stripe.js to redirect to the checkout page
+          // with the sku or plan ID.
+          stripe
+            .redirectToCheckout({
+              mode: 'payment',
+              lineItems: items,
+              successUrl:'https://mtba.int.eu.org/success',
+              cancelUrl:'https://mtba.int.eu.org/canceled'
+            })
+            .then(function (result) {
+              if (result.error) {
+                /*
+                 * If `redirectToCheckout` fails due to a browser or network
+                 * error, display the localized error message to your customer.
+                 *
+              */
+                var displayError = document.getElementById('error-message');
+                displayError.textContent = result.error.message;
+              }
+            });
+          });
+      });
+
+
+
+
+    
+/*
+    
     stripe.redirectToCheckout({
       lineItems: [{price: 'price_1RBjp7FtAbcT3JTHYfr6gf46', quantity: 1}],
       mode: 'payment',
@@ -489,13 +524,13 @@ f
          * If `redirectToCheckout` fails due to a browser or network
          * error, display the localized error message to your customer.
          *
-      */
+      
         var displayError = document.getElementById('error-message');
         displayError.textContent = result.error.message;
       }
     });
   });
-  
+ */
 })();
 </script>
         <!--
