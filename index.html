@@ -203,7 +203,7 @@ f
   data-checkout-mode="payment"
   data-price-id="price_1IcAtsFtAbcT3JTHbbV7ywG3"
 >
-Pay EUR €1.30
+Pay EUR €1.50
 </button>
 <!--
 <button
@@ -432,21 +432,19 @@ Pay EUR €1.30
       </div>
     </footer>
         
-    <script>
-/*
+   <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
-      var PUBLISHABLE_KEY =
-        "pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S";
+      var PUBLISHABLE_KEY = "pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S";
+      // Replace with the domain you want your users to be redirected back to after payment
+      var DOMAIN = location.href.replace(/[^/]*$/, "");
 
       if (PUBLISHABLE_KEY === "pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP") {
         console.log(
           "Replace the hardcoded publishable key with your own publishable key: https://dashboard.stripe.com/test/apikeys"
         );
       }
-*/
-  // Replace with the domain you want your users to be redirected back to after payment
-  var DOMAIN = location.href.replace(/[^/]*$/, "");     
-  var stripe = Stripe('pk_live_51IaLXRFtAbcT3JTHCojJ8Ezne6TdRLMoPhVmPCvsaxuHxwtGjJfCT4v073u2BfEOOjsJfQVSeBmy7jjT8RNfDU8300IaMKVg6S');
+
+      var stripe = Stripe(PUBLISHABLE_KEY);
 
       // Handle any errors from Checkout
       var handleResult = function(result) {
